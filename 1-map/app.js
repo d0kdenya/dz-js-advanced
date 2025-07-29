@@ -17,6 +17,7 @@ const array = [
     { id: 1, name: "Вася" },
 ];
 
-let uniqueUsers = new Set(array.map((el) => array.find((item) => el.id === item.id)));
+const uniqueIds = new Set(array.map((item) => item.id));
+const uniqueUsers = Array.from(uniqueIds).map((id) => array.find((item) => item.id === id));
 
 console.log('Result: ', uniqueUsers);
