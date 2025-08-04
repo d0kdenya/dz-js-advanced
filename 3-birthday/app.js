@@ -17,7 +17,7 @@ function isMore14YearsOld(birthdayString) {
     } else if (yearDiff < 14) {
         return false;
     } else {
-        const monthDiff = now.getMonth - birthday.getMonth();
+        const monthDiff = now.getMonth() - birthday.getMonth();
 
         if (monthDiff < 0) {
             return false;
