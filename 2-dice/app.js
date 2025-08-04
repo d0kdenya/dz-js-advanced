@@ -9,7 +9,6 @@
 
 'use strict';
 
-
 function roll(dice) {
     const dices = [4, 6, 8, 10, 12, 16, 20];
 
