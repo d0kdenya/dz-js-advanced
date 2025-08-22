@@ -16,14 +16,14 @@ class Car {
     constructor(brand, model, mileage) {
         this.#brand = brand;
         this.#model = model;
-        this.#mileage = mileage;
+        this.mileage = mileage;
     }
 
-    get #mileage() {
+    get mileage() {
         return this.#_mileage;
     }
 
-    set #mileage(mileage) {
+    set mileage(mileage) {
         this.#_mileage = mileage;
     }
 
@@ -33,4 +33,6 @@ class Car {
 }
 
 const solaris = new Car('Hyundai', 'Solaris', 450000);
+solaris.info();
+solaris.mileage = 590000;
 solaris.info();
