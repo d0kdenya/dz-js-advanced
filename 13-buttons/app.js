@@ -10,7 +10,7 @@
 
 const wrapper = document.querySelector('.button__wrapper');
 const count = document.querySelector('.count');
-let currentCount = 0;
+let currentCount = +count.innerText;
 
 let i = 0;
 
@@ -19,8 +19,17 @@ for (const el of [...wrapper.children]) {
 }
 
 wrapper.addEventListener('click', (event) => {
-    if (event.target.getAttribute('data-id')) {
-        event.target.innerText = 'Нажата!';
-        count.innerText = count.innerText = ++currentCount;
+    const dataId = event.target.getAttribute('data-id');
+
+    if (dataId) {
+        for (const el of [...wrapper.children]) {
+            const currentDataId = el.getAttribute('data-id');
+            if (currentDataId === dataId) {
+                el.innerText = 'Нажата!';
+                count.innerText = count.innerText = ++currentCount;
+            } else {
+                el.innerText = 'Нажми меня!';
+            }
+        }
     }
 })
